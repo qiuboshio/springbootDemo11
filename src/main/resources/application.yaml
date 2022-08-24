@@ -1,0 +1,49 @@
+server:
+  port: 8080
+user:
+  userName: 邱泽鹏
+  sex:  男
+  address: 重庆
+#spring:
+#  mvc:
+#   static-path-pattern: /res/**
+  #表示访问静态资源要带上res的前缀
+spring:
+  servlet:
+    multipart:
+      max-file-size: 40MB
+  auto:
+    openurl: false
+  web:
+    loginurl: localhost:8080/login
+    googleexcute: C:\Program Files\Google\Chrome\Application\chrome.exe
+#数据库配置
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    #超时时间
+  jdbc:
+    template:
+      query-timeout: 3
+  #redis相关配置
+  redis:
+    host: 127.0.0.1
+    username:
+    password:
+    jedis:
+      pool:
+        max-active: 8   #最大连接数为8
+    port: 6379
+    #client-type: lettuce
+#mybatis全局配置文件和mapper文件
+#注意点
+#mybatis的配置项是mybatis:****
+#mybatis-plus的配置项是mybatis-plus:***
+mybatis-plus:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level:
+    com.qzp.demo.mapper: debug    #打印出mapper执行的sql语句
