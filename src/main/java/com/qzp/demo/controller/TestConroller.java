@@ -2,6 +2,8 @@ package com.qzp.demo.controller;
 
 import com.qzp.demo.entity.TTest;
 import com.qzp.demo.service.TestService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -23,6 +25,7 @@ import java.util.concurrent.*;
  */
 @Controller
 @Slf4j
+@Api(value = "test接口说明文档")
 public class TestConroller {
     @Autowired
     TestService testService;
@@ -30,6 +33,7 @@ public class TestConroller {
     //查询出符合条件的结果列表
     @ResponseBody
     @GetMapping("/findTest/{id}")
+    @ApiOperation(value = "test方法名检查")
     //localhost:8080/findTest/2
     public List<TTest> findTest(@PathVariable("id")Long id){
         ExecutorService executorService = Executors.newFixedThreadPool(200);
@@ -72,6 +76,7 @@ public class TestConroller {
     //localhost:8080/updateByIdTest/2/qzp/13/qzp@baidu.com
     public String updateByIdTest(@PathVariable("id")Long id,@PathVariable("name")String name,
                        @PathVariable("age")int age,@PathVariable("email")String email){
+        
         TTest tTest = new TTest();
         tTest.setAge(age);
         tTest.setEmail(email);

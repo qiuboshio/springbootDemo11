@@ -6,10 +6,13 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @ServletComponentScan  //在springboot启动类中注册过滤器
 @MapperScan("com.qzp.demo.mapper")  //mapper全局包扫面，添加此注解后可以不用在mapper接口类中添加mapper注解
+//@EnableSwagger2 //开始swagger2的功能
 public class DemoApplication {
 
     public static void main(String[] args) {

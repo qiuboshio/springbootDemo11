@@ -17,6 +17,10 @@ spring:
   web:
     loginurl: localhost:8080/login
     googleexcute: C:\Program Files\Google\Chrome\Application\chrome.exe
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher  #解决springboot和swagger的冲突
+
 #数据库配置
   datasource:
     username: root

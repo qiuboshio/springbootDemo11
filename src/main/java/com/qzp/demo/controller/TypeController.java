@@ -49,7 +49,7 @@ public class TypeController {
     //插入方法
     @ResponseBody
     @GetMapping("/insertType/{id}/{name}")
-    //localhost:8080/insertType/122/齐大圣
+    //localhost:8080/insertType/11342322/齐大圣fdf
     public int insertType(@PathVariable("id") Long id,
                               @PathVariable("name") String name){
         TType type1 = new TType();

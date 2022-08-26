@@ -1,5 +1,6 @@
 package com.qzp.demo.controller;
 
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import java.nio.file.Paths;
  */
 @Controller
 @Slf4j
+@Api(value="文件上传接口")
 public class FileController {
     @GetMapping("/file")
     public String fileIndex(){
