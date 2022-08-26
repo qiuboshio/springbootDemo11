@@ -18,7 +18,7 @@ public class TypeServiceImpl implements TypeService {
     @Autowired
     TypeDao typeDao;
     @Override
-    public int insert(TType type) {
+    public int find(TType type) {
         return typeDao.insert(type);
     }
 
@@ -31,5 +31,10 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public Boolean updateType(TType type) {
         return typeDao.updateType(type);
+    }
+
+    @Override
+    public int insert(TType type1) {
+        return typeDao.insert(type1);
     }
 }

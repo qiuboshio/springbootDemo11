@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * 2.新建类MyInterceptor实现类并且实现HandlerInterceptor
  *
  */
-@Configuration
+//@Configuration
 public class InterceptorWebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

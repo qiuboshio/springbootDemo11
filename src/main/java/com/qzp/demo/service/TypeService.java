@@ -11,10 +11,12 @@ import java.util.List;
  */
 
 public interface TypeService {
-    //插入方法
-    int insert(TType type);
+    //查找方法
+    int find(TType type);
     //查询方法
     List<TType> selectType(Long id);
     //修改方法
     Boolean updateType(TType type);
+    //插入方法
+    int insert(TType type1);
 }

@@ -27,7 +27,7 @@ public class TypeController {
     public int typeCount(@PathVariable("id") Long id,@PathVariable("name") String name){
         type.setId(id);
         type.setName(name);
-        return typeService.insert(type);
+        return typeService.find(type);
     }
     @ResponseBody
     @GetMapping("/find/{id}")
@@ -38,12 +38,23 @@ public class TypeController {
     //修改方法
     @ResponseBody
     @GetMapping("/updateType/{id}/{name}")
-    //localhost:8080/updateType/1722/齐天大圣
+    //localhost:8080/updateType/1722/齐天大地方
     public Boolean updateType(@PathVariable("id") Long id,
                               @PathVariable("name") String name){
         TType type1 = new TType();
         type1.setId(id);
         type1.setName(name);
         return typeService.updateType(type1);
+    }
+    //插入方法
+    @ResponseBody
+    @GetMapping("/insertType/{id}/{name}")
+    //localhost:8080/insertType/122/齐大圣
+    public int insertType(@PathVariable("id") Long id,
+                              @PathVariable("name") String name){
+        TType type1 = new TType();
+        type1.setId(id);
+        type1.setName(name);
+        return typeService.insert(type1);
     }
 }
