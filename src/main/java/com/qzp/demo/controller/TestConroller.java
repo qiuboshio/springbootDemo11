@@ -55,7 +55,7 @@ public class TestConroller {
     //修改数据 -mybatis方式
     @ResponseBody
     @GetMapping("/updateTest/{id}/{name}/{age}/{email}")
-    //localhost:8080/updateTest/2/qzp/13/qzp@baidu.com
+    //localhost:8080/updateTest/1/qzp/13/qzp@baidu.com
     public String updateTest(@PathVariable("id")Long id,@PathVariable("name")String name,
                        @PathVariable("age")int age,@PathVariable("email")String email){
         TTest tTest = new TTest();
